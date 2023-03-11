@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FFF9F2;
-  scroll-behavior: auto;
 }
 .wrapper {
   display: flex;
@@ -36,6 +35,13 @@ body {
   flex-direction: column;
   cursor: pointer;
 }
+.item-label:active{
+  opacity: .7;
+  transition: .2s;
+}
+.item-label:active .item-header {
+  color: #2c8fff !important;
+}
 .item-header {
   line-height: 1em;
   padding-bottom: 1em;
@@ -60,7 +66,6 @@ body {
   height: 13px;
   background: url(images/plus-icon.png) center no-repeat;
   background-size: contain;
-  transition: all .4s;
 }
 /* click event */
 input:checked + .item-label .item-header .item-plus-icon {
@@ -73,7 +78,7 @@ input:checked + .item-label .item-header .item-plus-icon{
 input:checked + .item-label .item-body {
   margin-bottom: 1em;
   max-height: 100vh;
-  transition: max-height .4s;
+  transition: max-height .8s;
 }
 input:checked + .item-label img {
   transform: scale(1);
@@ -105,7 +110,7 @@ input:checked + .item-label img {
   .item:hover .item-body {
     margin-bottom: 1em;
     max-height: 100vh;
-    transition: max-height .4s;
+    transition: max-height .8s;
   }
   .item:hover img {
     transform: scale(1);
