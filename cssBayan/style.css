@@ -7,10 +7,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FFF9F2;
+  scroll-behavior: auto;
 }
 .wrapper {
   display: flex;
   justify-content: center;
+  /* trick for scrollbar (not moving my div) */
+  padding-left: calc(100vw - 100%);
 }
 .container {
   display: flex;
@@ -19,10 +22,6 @@ body {
   font-weight: bold;
   font-size: 1.2em;
   transition: .2s;
-}
-/* typography */
-.text-large {
-  font-size: 1.5em;
 }
 /* accordion */
 .item {
@@ -59,10 +58,9 @@ body {
 .item-plus-icon {
   width: 13px;
   height: 13px;
-  display: block;
   background: url(images/plus-icon.png) center no-repeat;
   background-size: contain;
-  transition: .4s;
+  transition: all .4s;
 }
 /* click event */
 input:checked + .item-label .item-header .item-plus-icon {
@@ -83,11 +81,22 @@ input:checked + .item-label img {
 }
 /* hover event */
 @media(hover:hover) {
+  .item-header {
+    color: #2c8fff;
+    transition: .2s;
+  }
+  input:checked + .item-label .item-header {
+    color: inherit;
+    transition: .2s;
+  }
   .item-plus-icon {
-    display: none;
+    opacity: 1;
   }
   .accordion:hover .item-plus-icon {
     display: block;
+  }
+  .accordion:hover .item-header{
+    color: inherit;
   }
   .item:hover .item-plus-icon{
     transform: rotate(45deg);
