@@ -66,10 +66,6 @@ body {
 .item-plus-icon {
   font-size: 1.4em;
   transform: translateY(-2px);
-  /* width: 13px;
-  height: 13px;
-  background: url(images/plus-icon.png) center no-repeat;
-  background-size: contain; */
 }
 /* click event */
 input:checked + .item-label .item-header .item-plus-icon {
