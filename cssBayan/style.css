@@ -34,8 +34,10 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .item-label:active{
+  outline: none;
   opacity: .7;
   transition: .2s;
 }
@@ -62,10 +64,12 @@ body {
   transition: all .2s ease-in-out;
 }
 .item-plus-icon {
-  width: 13px;
+  font-size: 1.4em;
+  transform: translateY(-2px);
+  /* width: 13px;
   height: 13px;
   background: url(images/plus-icon.png) center no-repeat;
-  background-size: contain;
+  background-size: contain; */
 }
 /* click event */
 input:checked + .item-label .item-header .item-plus-icon {
